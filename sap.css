@@ -1,0 +1,230 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+header {
+  background: #005b96;
+  color: #fff;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.menu {
+  display: flex;
+  gap: 1rem;
+}
+.menu a {
+  padding: 0.5rem 0.75rem;
+  transition: background 0.3s, color 0.3s;
+}
+.menu a:hover,
+.menu a:focus {
+  background: #003f6a;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: transform 0.3s;
+}
+
+/* HERO SECTION */
+.hero {
+  background: #e1f5fe;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.hero h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+.hero p {
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 0.3rem;
+  border-radius: 4px;
+  background: #005b96;
+  color: #fff;
+  transition: opacity 0.3s;
+}
+.btn:hover,
+.btn:focus {
+  opacity: 0.9;
+}
+
+/* SECTIONS */
+.section {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+/* Card grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background-color: chocolate;
+  padding: 1.5rem;
+  border-radius: 6px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* CALLBACK WIDGET (floating) */
+.callback-widget {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  font-family: inherit;
+}
+.callback-widget .trigger {
+  background: #005b96;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.callback-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1001;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.callback-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.callback-form h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.callback-form label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+.callback-form input,
+.callback-form select,
+.callback-form button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.callback-form button {
+  background: #005b96;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.callback-form button:hover {
+  opacity: 0.9;
+}
+
+.callback-form .close-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  color: #888;
+}
+
+/* MEDIA QUERIES (MOBILE-FIRST) */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #005b96;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  .menu a {
+    padding: 1rem;
+  }
+  .hamburger {
+    display: flex;
+  }
+  nav.open .menu {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+}
